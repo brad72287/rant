@@ -12,7 +12,7 @@
 					controller: 'HomeController as vm'
 				})
 				.state('home.tweets',{
-					url: '/',
+					url: '/tweets',
 					templateUrl: 'tweets/tweets.html',
 					controller: 'TweetsController as vm'
 				})
