@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   respond_to :json
 
   def set_csrf_cookie
-  	cookies["XSRF-TOKEN"] = form_authenticity_token if protect_from_forgery?
+  	cookies["XSRF-TOKEN"] = form_authenticity_token if protect_against_forgery?
   end
 
   def index
