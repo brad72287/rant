@@ -11,11 +11,6 @@
 					templateUrl: 'home/home.html',
 					controller: 'HomeController as vm'
 				})
-				.state('home.tweets',{
-					url: 'tweets',
-					templateUrl: 'tweets/tweets.html',
-					controller: 'TweetsController as vm'
-				})
 				.state('home.about',{
 					url: 'about',
 					templateUrl: 'about/about.html',
@@ -24,7 +19,7 @@
 				.state('home.typer',{
 					url: 'typer',
 					templateUrl: 'typer/typer.html',
-					controller: 'TweetsController as vm'
+					controller: 'RantsController as vm'
 				})
 				.state('home.rants',{
 					url: 'rants',

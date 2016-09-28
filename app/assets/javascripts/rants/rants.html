@@ -1,5 +1,5 @@
 <div ng-include="'rants/new.html'"></div>
 
 <ul>
-	<li ng-repeat='rant in vm.rants'>{{rant.content}}</li>
+	<li ng-repeat='rant in vm.rants'>{{rant.content}} ({{rant.sentiment}})</li>
 </ul>
