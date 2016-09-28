@@ -26,6 +26,11 @@
 					templateUrl: 'typer/typer.html',
 					controller: 'TweetsController as vm'
 				})
+				.state('home.rants',{
+					url: 'rants',
+					templateUrl: 'rants/rants.html',
+					controller: 'RantsController as vm'
+				})
 			$urlRouterProvider.otherwise('/');
 		})
 
