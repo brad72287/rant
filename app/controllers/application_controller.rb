@@ -11,8 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-    @analyzer = Sentimental.new
-    @analyzer.load_defaults
+
   end
 
   protected
