@@ -24,7 +24,7 @@
 				.state('home.typer',{
 					url: 'typer',
 					templateUrl: 'typer/typer.html',
-					controller: 'HomeController as vm'
+					controller: 'TweetsController as vm'
 				})
 			$urlRouterProvider.otherwise('/');
 		})

@@ -23,6 +23,7 @@
 		}
 
 		function createTweet(){
+			console.log('creating a tweet');
 			return TweetFactory.createTweet(vm.newTweet)
 				.then(getTweets)
 		}
