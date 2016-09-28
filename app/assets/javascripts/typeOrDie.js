@@ -1,29 +1,36 @@
-$(function() {
-	var typingTimer;                
-	var doneTypingInterval = 200;
-	var $input = $('#input');
+// $(function() {
+	
+// 	function hello(){
+// 		console.log('hello');
+// 	}
 
-	$input.on('keyup', function () {
-	  clearTimeout(typingTimer);
-	  typingTimer = setTimeout(doneTyping, doneTypingInterval);
-	});
+// 	function doneTyping () {
+// 	  $("#input").fadeOut(4000, function(){
+// 	  alert("it's all ogre");
+// 	});
+// 	}
 
-	$input.on('keydown', function () {
-	  clearTimeout(typingTimer);
-	  $("#wordcount").html(wordCount());
-	  $("#input").stop();
-	  $("#input").fadeIn(200);
-	});
+// 	function wordCount() { 
+// 	  return $("#input").val().split(" ").length;
+// 	}
 
-	function doneTyping () {
-	  $("#input").fadeOut(4000, function(){
-	  alert("it's all ogre");
-	});
-	}
+// 	function attachTyperListeners(){
+// 		var typingTimer;                
+// 		var doneTypingInterval = 200;
+// 		var $input = $('#input');
 
-	function wordCount() { 
-	  return $("#input").val().split(" ").length;
-	}
+// 		$input.on('keyup', function () {
+// 		  clearTimeout(typingTimer);
+// 		  typingTimer = setTimeout(doneTyping, doneTypingInterval);
+// 		});
 
-	//alert("it's working!");
-});
+// 		$input.on('keydown', function () {
+// 		  clearTimeout(typingTimer);
+// 		  $("#wordcount").html(wordCount());
+// 		  $("#input").stop();
+// 		  $("#input").fadeIn(200);
+// 		});
+// 	}
+
+// 	console.log("it's working!");
+// });

@@ -1,0 +1,39 @@
+<textarea style="border: 0px; outline: none;" id="input" placeholder="Start typing to begin.">
+</textarea>
+
+<div id="wordcount"></div>
+
+<script>
+$(function() {
+
+	var typingTimer;                
+	var doneTypingInterval = 200;
+	var $input = $('#input');
+
+	function doneTyping () {
+		$("#input").fadeOut(4000, function(){
+			alert("it's all ogre");
+		});
+	}
+
+	function wordCount() { 
+	  return $("#input").val().split(" ").length;
+	}
+
+		
+
+		$input.on('keyup', function () {
+		  clearTimeout(typingTimer);
+		  typingTimer = setTimeout(doneTyping, doneTypingInterval);
+		});
+
+		$input.on('keydown', function () {
+		  clearTimeout(typingTimer);
+		  $("#wordcount").html(wordCount());
+		  $("#input").stop();
+		  $("#input").fadeIn(200);
+		});
+
+	console.log("it's working!");
+});
+</script>
