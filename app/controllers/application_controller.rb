@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  require 'sentimental'
 
   after_filter :set_csrf_cookie
 
@@ -10,7 +11,9 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-
+    analyzer = Sentimental.new
+    analyzer.load_defaults
+    analyzer.threshold = 0.1
   end
 
   protected
