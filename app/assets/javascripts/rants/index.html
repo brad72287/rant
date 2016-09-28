@@ -4,7 +4,7 @@
 
 <ul>
 	<li ng-repeat="rant in vm.rants | filter : searchTerm">
-		{{rant.content}} ({{rant.sentiment_score}}) {{rant.id}}
+		{{rant.title}} / {{rant.content}} ({{rant.sentiment_score}}) {{rant.id}}
 		<a href="#/rant/{{rant.id}}">link</a>
 	</li>
 

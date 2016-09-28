@@ -29,7 +29,9 @@
 		}
 
 		function updateRant(){
-
+			console.log('patching a rant');
+			return RantFactory.updateRant(vm.newRant)
+				.then(getRants)
 		}
 
 		function deleteRant(){

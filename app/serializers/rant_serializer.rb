@@ -1,5 +1,5 @@
 class RantSerializer < ActiveModel::Serializer
-  attributes :id, :content, :sentiment, :sentiment_score
+  attributes :id, :title, :content, :sentiment, :sentiment_score
 
   def sentiment
   	analyzer = Sentimental.new

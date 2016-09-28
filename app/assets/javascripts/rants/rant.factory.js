@@ -37,8 +37,19 @@
 				.catch(handleError);
 		}
 
-		function updateRant(){
-			
+		function updateRant(rant){
+			var req = {
+				method: 'PUT',
+				url: '/rants/'+rant.id,
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				data: {
+					rant: rant 
+				}
+			};
+			return $http(req)
+				.catch(handleError);
 		}
 
 		function deleteRant(){
