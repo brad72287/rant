@@ -26,6 +26,20 @@
 					templateUrl: 'rants/rants.html',
 					controller: 'RantsController as vm'
 				})
+				.state('home.rant', {
+					url: 'rant/:id',
+					templateUrl: 'rants/rant.html',
+					controller: 'RantsController as vm',
+					resolve: {
+						vm: function ($http, $stateParams) {
+							console.log("you are in the rant show route...");
+							console.log($stateParams.id);
+							var bla = $http.get('rants/' + $stateParams.id)
+							console.log(bla.data);
+							return $http.get('rants/' + $stateParams.id);
+						}
+					}
+			});
 			$urlRouterProvider.otherwise('/');
 		})
 
