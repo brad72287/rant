@@ -3,7 +3,7 @@
 
 	function RantsController(RantFactory){
 		var vm = this;
-		vm.name = 'brad';
+		vm.name = 'notbrad';
 		vm.getRants = getRants;
 		vm.createRant = createRant;
 		vm.updateRant = updateRant;

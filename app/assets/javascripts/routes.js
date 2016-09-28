@@ -21,21 +21,18 @@
 					templateUrl: 'typer/typer.html',
 					controller: 'RantsController as vm'
 				})
-				.state('home.rants',{
+				.state('home.index',{
 					url: 'rants',
-					templateUrl: 'rants/rants.html',
+					templateUrl: 'rants/index.html',
 					controller: 'RantsController as vm'
 				})
-				.state('home.rant', {
+				.state('home.show', {
 					url: 'rant/:id',
-					templateUrl: 'rants/rant.html',
-					controller: 'RantsController as vm',
+					templateUrl: 'rants/show.html',
+					controller: 'ShowController as vm',
 					resolve: {
-						vm: function ($http, $stateParams) {
+						rantShow: function ($http, $stateParams) {
 							console.log("you are in the rant show route...");
-							console.log($stateParams.id);
-							var bla = $http.get('rants/' + $stateParams.id)
-							console.log(bla.data);
 							return $http.get('rants/' + $stateParams.id);
 						}
 					}
