@@ -1,5 +1,9 @@
 <div ng-include="'rants/new.html'"></div>
 
+<p><input type="text" ng-model="searchTerm"></p>
+
 <ul>
-	<li ng-repeat='rant in vm.rants'>{{rant.content}} ({{rant.sentiment}})</li>
+	<li ng-repeat="rant in vm.rants | filter : searchTerm">
+		{{rant.content}} ({{rant.sentiment_score}})
+	</li>
 </ul>
