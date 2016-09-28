@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	function TweetsController(){
+	function TweetsController(TweetFactory){
 		var vm = this;
 		vm.name = 'brad';
 		vm.getTweets = getTweets;
@@ -18,7 +18,8 @@
 		}
 
 		function getTweets(){
-
+			return TweetFactory.getTweets()
+				.then(setTweets)
 		}
 
 		function createTweet(){
@@ -31,6 +32,10 @@
 
 		function deleteTweet(){
 			
+		}
+
+		function setTweets(data){
+			return vm.tweets = data;
 		}
 	}
 

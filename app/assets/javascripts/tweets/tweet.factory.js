@@ -4,11 +4,11 @@
 
 	function TweetFactory($http){
 		return {
-			getTweets: getTweets;
-			getTweet: getTweet;
-			createTweet: createTweet;
-			updateTweet: updateTweet;
-			deleteTweet: deleteTweet;
+			getTweets: getTweets,
+			getTweet: getTweet,
+			createTweet: createTweet,
+			updateTweet: updateTweet,
+			deleteTweet: deleteTweet,
 		}
 
 		function getTweets(){
