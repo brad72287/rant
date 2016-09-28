@@ -12,9 +12,14 @@
 					controller: 'HomeController as vm'
 				})
 				.state('home.tweets',{
-					url: '/tweets',
+					url: 'tweets',
 					templateUrl: 'tweets/tweets.html',
 					controller: 'TweetsController as vm'
+				})
+				.state('home.about',{
+					url: 'about',
+					templateUrl: 'about/about.html',
+					controller: 'AboutController as vm'
 				})
 			$urlRouterProvider.otherwise('/');
 		})

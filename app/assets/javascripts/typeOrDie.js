@@ -25,5 +25,5 @@ $(function() {
 	  return $("#input").val().split(" ").length;
 	}
 
-	alert("it's working!");
+	//alert("it's working!");
 });
