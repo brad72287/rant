@@ -22,8 +22,19 @@
 			
 		}
 
-		function createTweet(){
-			
+		function createTweet(tweet){
+			var req = {
+				method: 'POST',
+				url: '/tweets',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				data: {
+					tweet: tweet 
+				}
+			};
+			return $http(req)
+				.catch(handleError);
 		}
 
 		function updateTweet(){

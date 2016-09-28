@@ -23,7 +23,8 @@
 		}
 
 		function createTweet(){
-
+			return TweetFactory.createTweet(vm.newTweet)
+				.then(getTweets)
 		}
 
 		function updateTweet(){
