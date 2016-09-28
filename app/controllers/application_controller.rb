@@ -11,9 +11,8 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-    analyzer = Sentimental.new
-    analyzer.load_defaults
-    analyzer.threshold = 0.1
+    @analyzer = Sentimental.new
+    @analyzer.load_defaults
   end
 
   protected
