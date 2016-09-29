@@ -4,6 +4,7 @@
 	function ShowController(RantFactory, rantShow){
 		var vm = this;
 		console.log('show controller');
+		console.log(rantShow.data);
 		this.data = rantShow.data;
 		vm.updateRant = updateRant;
 		//vm.updateRant = updateRant;

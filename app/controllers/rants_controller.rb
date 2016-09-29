@@ -6,7 +6,7 @@ class RantsController < ApplicationController
 	end
 
 	def show
-		rant = Rant.find_by(params[:id])
+		rant = Rant.find_by_id(params[:id])
 		render json: rant
 	end
 
@@ -25,7 +25,7 @@ class RantsController < ApplicationController
 	end
 
 	def update
-		rant = Rant.find_by(params[:id])
+		rant = Rant.find_by_id(params[:id])
 		if rant.update(rant_params)
 			render json: rant
 		else

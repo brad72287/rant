@@ -23,6 +23,7 @@
 		}
 
 		function createRant(rant){
+			console.log(rant);
 			var req = {
 				method: 'POST',
 				url: '/rants',
@@ -38,8 +39,9 @@
 		}
 
 		function updateRant(rant){
+			console.log(rant);
 			var req = {
-				method: 'PUT',
+				method: 'PATCH',
 				url: '/rants/'+rant.id,
 				headers: {
 					'Content-Type': 'application/json'

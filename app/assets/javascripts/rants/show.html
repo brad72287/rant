@@ -9,6 +9,7 @@ content: {{vm.data.content}}<br>
 </form> -->
 
 <form ng-submit="vm.updateRant()">
+<input ng-model="vm.data.id"></input>
 <input ng-model="vm.data.title"></input>
 <input ng-model="vm.data.content"></input>
 <input type="submit">
