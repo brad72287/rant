@@ -4,7 +4,12 @@
 <form ng-submit="vm.createRant()">
 <textarea ng-model="vm.newRant.content" style="width: 80%; height: 500px; border: 0px; outline: none; resize: none; font-size: 22px;" id="input" placeholder="Start typing to begin.">
 </textarea>
-<input type="submit">
+<div id="submit">
+	congrats, you did it!<br>
+	<input ng-model="vm.newRant.title" placeholder="Untitled Rant" type="text">
+	<input type="submit" value="submit rant!">
+</div>
+
 </form>
 
 
@@ -19,10 +24,13 @@ $(function() {
 	var doneTypingInterval = 200;
 	var $input = $('#input');
 
+	$("#submit").hide();
+
 
 	function doneTyping () {
 		$("#input").fadeOut(4000, function(){
 			console.log("you typed words:"+wordCount());
+			$("#submit").fadeIn(2000);
 		});
 	}
 
@@ -42,6 +50,5 @@ $(function() {
 		  $("#input").fadeIn(200);
 		});
 
-	console.log("it's working!");
 });
 </script>
