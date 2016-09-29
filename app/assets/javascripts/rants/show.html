@@ -1,18 +1,11 @@
-Welcome to the rant show page!!!
-
-
-<!-- <form ng-submit="vm.updateRant">
-title:<input ng-model="vm.data.title"><br>
-sentiment: {{vm.data.sentiment}}<br>
-content: {{vm.data.content}}<br>
-<input type="submit">
-</form> -->
-
+<br>
+<div>
 <form ng-submit="vm.updateRant()">
-<input ng-model="vm.data.id"></input>
-<input ng-model="vm.data.title"></input>
-<input ng-model="vm.data.content"></input>
-<input type="submit">
+	Title: <input ng-model="vm.data.title"></input>	<input type="submit" value="update title"><br>
+	Sentiment: {{vm.data.sentiment}} ({{vm.data.sentiment_score}})<br>
+	Content: {{vm.data.content}}<br>
+
 </form>
+</div>
 
 

@@ -16,6 +16,11 @@
 					templateUrl: 'about/about.html',
 					controller: 'HomeController as vm'
 				})
+				.state('home.instructions',{
+					url: 'instructions',
+					templateUrl: 'instructions/instructions.html',
+					controller: 'HomeController as vm'
+				})
 				.state('home.typer',{
 					url: 'typer',
 					templateUrl: 'typer/typer.html',

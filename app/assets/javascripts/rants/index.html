@@ -1,11 +1,9 @@
-<div ng-include="'rants/new.html'"></div>
 
 <p><input type="text" ng-model="searchTerm"></p>
 
 <ul>
 	<li ng-repeat="rant in vm.rants | filter : searchTerm">
-		{{rant.title}} / {{rant.content}} ({{rant.sentiment_score}}) {{rant.id}}
-		<a href="#/rant/{{rant.id}}">link</a>
+		<a href="#/rant/{{rant.id}}">{{rant.title}}({{rant.sentiment}})</a>
 	</li>
 
 	<div ui-view></div>
