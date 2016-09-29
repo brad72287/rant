@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	function RantsController(RantFactory){
+	function RantsController(RantFactory, $filter){
 		var vm = this;
 		vm.name = 'notbrad';
 		vm.getRants = getRants;

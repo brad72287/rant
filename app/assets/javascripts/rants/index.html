@@ -1,8 +1,12 @@
 
-<p><input type="text" ng-model="searchTerm"></p>
+<p><input placeholder='search' type="text" ng-model="searchTerm"></p>
+<button ng-click="myFilter = {sentiment: ''}">all</button>
+<button ng-click="myFilter = {sentiment: 'positive'}">positive</button>
+<button ng-click="myFilter = {sentiment: 'neutral'}">neutral</button>
+<button ng-click="myFilter = {sentiment: 'negative'}">negative</button> 
 
 <ul>
-	<li ng-repeat="rant in vm.rants | filter : searchTerm">
+	<li ng-repeat="rant in vm.rants | filter : myFilter | filter: searchTerm">
 		<a href="#/rant/{{rant.id}}">{{rant.title}}({{rant.sentiment}})</a>
 	</li>
 
