@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	function RantsController(RantFactory, $filter){
+	function RantsController(RantFactory, $filter, $state){
 		var vm = this;
 		vm.name = 'notbrad';
 		vm.getRants = getRants;
@@ -24,6 +24,7 @@
 
 		function createRant(){
 			console.log('creating a rant');
+			$state.go('home.index');
 			return RantFactory.createRant(vm.newRant)
 				.then(getRants)
 		}
