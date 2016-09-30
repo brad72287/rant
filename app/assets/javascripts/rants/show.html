@@ -1,7 +1,9 @@
 <br>
 <div>
-<form ng-submit="vm.updateRant()">
-	Title: <input ng-model="vm.data.title"></input>	<input type="submit" value="update title"><br>
+<form name="form" ng-submit="vm.updateRant()">
+	Title: <input name="title" required="required" ng-model="vm.data.title"></input>	<input type="submit" value="update title"> <div ng-if="form.title.$touched && form.title.$error.required">
+        Username is required!
+    </div><br>
 	Sentiment: {{vm.data.sentiment}} ({{vm.data.sentiment_score}})<br>
 	Content: {{vm.data.content}}<br>
 
