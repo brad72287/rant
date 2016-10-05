@@ -1,19 +1,27 @@
 <h2>view rants</h2>
 <p class="lead">
 <p><input placeholder='search' type="text" ng-model="searchTerm"></p>
+filter:
 <button ng-click="sentimentFilter = {sentiment: ''}">all</button>
 <button ng-click="sentimentFilter = {sentiment: 'positive'}">positive</button>
 <button ng-click="sentimentFilter = {sentiment: 'neutral'}">neutral</button>
-<button ng-click="sentimentFilter = {sentiment: 'negative'}">negative</button> 
+<button ng-click="sentimentFilter = {sentiment: 'negative'}">negative</button>
+order:  
+<button ng-click="scoreOrder = 'score'">score (asc)</button> 
+<button ng-click="scoreOrder = '-score'">score (desc)</button> 
 <br>
 <div class="well">
 
 	<table class='table'>
 		<tr><th>title</th><th>sentiment</th><th>score</th></tr>
-		<tr ng-repeat="rant in vm.rants | filter : sentimentFilter | filter: searchTerm">
+		<tr ng-repeat="rant in vm.rants | filter : sentimentFilter | filter: searchTerm | orderBy: scoreOrder">
 			<td><a href="#/rant/{{rant.id}}">{{rant.title}}</a></td>
 			<td>{{rant.sentiment}}</td>
-			<td><button ng-click="vm.plusOne(rant)">+1</button> {{rant.score}}</td>
+			<td>
+			    <button style="background: pink" ng-click="vm.minusOne(rant)">-1</button>
+				<button style="background: lightgreen" ng-click="vm.plusOne(rant)">+1</button>
+
+			 	{{rant.score}}</td>
 		</tr>
 	</table>
 

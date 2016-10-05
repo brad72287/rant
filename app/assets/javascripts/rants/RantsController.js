@@ -11,12 +11,18 @@
 		vm.createRant = createRant;
 		vm.updateRant = updateRant;
 		vm.plusOne = plusOne;
+		vm.minusOne = minusOne;
 
 		//instantiation
 		activate();
 
 		function plusOne(rant){
 			rant.score++;
+			RantFactory.updateRant(rant);
+		}
+
+		function minusOne(rant){
+			rant.score--;
 			RantFactory.updateRant(rant);
 		}
 
