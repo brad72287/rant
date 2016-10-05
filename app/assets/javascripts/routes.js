@@ -8,18 +8,15 @@
 			$stateProvider
 				.state('home',{
 					url: '/',
-					templateUrl: 'home/home.html',
-					controller: 'HomeController as vm'
+					templateUrl: 'home/home.html'
 				})
 				.state('home.about',{
 					url: 'about',
-					templateUrl: 'about/about.html',
-					controller: 'HomeController as vm'
+					templateUrl: 'about/about.html'
 				})
 				.state('home.instructions',{
 					url: 'instructions',
-					templateUrl: 'instructions/instructions.html',
-					controller: 'HomeController as vm'
+					templateUrl: 'instructions/instructions.html'
 				})
 				.state('home.typer',{
 					url: 'typer',
@@ -42,7 +39,7 @@
 						}
 					}
 			});
-			$urlRouterProvider.otherwise('/');
+			$urlRouterProvider.otherwise('about');
 		})
 
 
