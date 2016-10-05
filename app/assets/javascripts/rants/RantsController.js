@@ -4,14 +4,21 @@
 	function RantsController(RantFactory, $filter, $state, rantShow){
 		var vm = this;
 
-		vm.data = rantShow.data;	
+		vm.data = rantShow.data;
+		vm.counter = 0;	
 
 		vm.getRants = getRants;
 		vm.createRant = createRant;
 		vm.updateRant = updateRant;
+		vm.plusOne = plusOne;
 
 		//instantiation
 		activate();
+
+		function plusOne(rant){
+			rant.score++;
+			RantFactory.updateRant(rant);
+		}
 
 		function activate(){
 			getRants();

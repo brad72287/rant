@@ -15,12 +15,9 @@ ActiveRecord::Schema.define(version: 20160928152423) do
   create_table "rants", force: :cascade do |t|
     t.text     "content"
     t.text     "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tweets", force: :cascade do |t|
-    t.text "content"
+    t.integer  "score",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

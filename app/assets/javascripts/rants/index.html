@@ -9,10 +9,11 @@
 <div class="well">
 
 	<table class='table'>
-		<tr><th>title</th><th>sentiment</th></tr>
+		<tr><th>title</th><th>sentiment</th><th>score</th></tr>
 		<tr ng-repeat="rant in vm.rants | filter : sentimentFilter | filter: searchTerm">
 			<td><a href="#/rant/{{rant.id}}">{{rant.title}}</a></td>
 			<td>{{rant.sentiment}}</td>
+			<td><button ng-click="vm.plusOne(rant)">+1</button> {{rant.score}}</td>
 		</tr>
 	</table>
 
