@@ -43,9 +43,12 @@
 					templateUrl: 'rants/show.html',
 					controller: 'RantsController as vm',
 					resolve: {
-						rantShow: function ($http, $stateParams) {
+						rantShow: 
+
+						function ($http, $stateParams) {
 							return $http.get('rants/' + $stateParams.id);
 						}
+						
 					}
 			});
 			$urlRouterProvider.otherwise('about');

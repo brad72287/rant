@@ -13,7 +13,6 @@
 		//instantiation
 		activate();
 
-		//methods
 		function activate(){
 			getRants();
 		}
