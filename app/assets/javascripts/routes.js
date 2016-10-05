@@ -51,5 +51,4 @@
 			$urlRouterProvider.otherwise('about');
 		})
 
-
 }());
