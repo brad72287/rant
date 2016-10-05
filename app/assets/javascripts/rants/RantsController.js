@@ -1,8 +1,11 @@
 (function(){
 	'use strict';
 
-	function RantsController(RantFactory, $filter, $state){
+	function RantsController(RantFactory, $filter, $state, rantShow){
 		var vm = this;
+
+		vm.data = rantShow.data;	
+
 		vm.getRants = getRants;
 		vm.createRant = createRant;
 		vm.updateRant = updateRant;
@@ -28,9 +31,8 @@
 		}
 
 		function updateRant(){
-			console.log('modding a rant');
-			return RantFactory.updateRant(vm.newRant)
-				.then(getRants)
+			$state.go('home.index');
+			return RantFactory.updateRant(vm.data);
 		}
 
 		function setRants(data){

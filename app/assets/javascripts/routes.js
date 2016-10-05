@@ -21,20 +21,29 @@
 				.state('home.typer',{
 					url: 'typer',
 					templateUrl: 'typer/typer.html',
-					controller: 'RantsController as vm'
+					controller: 'RantsController as vm',
+					resolve: {
+						rantShow: function () {
+							return 'nothing';
+						}	
+					}
 				})
 				.state('home.index',{
 					url: 'rants',
 					templateUrl: 'rants/index.html',
-					controller: 'RantsController as vm'
+					controller: 'RantsController as vm',
+					resolve: {
+						rantShow: function () {
+							return 'nothing';
+						}
+					}
 				})
 				.state('home.show', {
 					url: 'rant/:id',
 					templateUrl: 'rants/show.html',
-					controller: 'ShowController as vm',
+					controller: 'RantsController as vm',
 					resolve: {
 						rantShow: function ($http, $stateParams) {
-							console.log("you are in the rant show route...");
 							return $http.get('rants/' + $stateParams.id);
 						}
 					}

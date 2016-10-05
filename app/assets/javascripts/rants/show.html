@@ -1,12 +1,17 @@
 <h2> {{vm.data.title}}</h2>
+
 <p class="lead">
-<form name="form" ng-submit="vm.updateRant()">
-	Title: <input name="title" required="required" ng-model="vm.data.title"></input>
-	<input type="submit" value="update title"> 
-	<div ng-if="form.title.$touched && form.title.$error.required">title is required!</div>
+
+	<form name="form" ng-submit="vm.updateRant()">
+		Title: 
+		<input name="title" required="required" ng-model="vm.data.title"></input>
+		<input type="submit" value="update title"> 
+		<div ng-if="form.title.$touched && form.title.$error.required">title is required!</div>
 	</form>
-	Sentiment: {{vm.data.sentiment}} ({{vm.data.sentiment_score}})<br>
-	Content: {{vm.data.content}}<br>
+
+		<b>Sentiment:</b> {{vm.data.sentiment}} ({{vm.data.sentiment_score}})<br>
+		<b>Content:</b> {{vm.data.content}}<br>
+
 </p>
 
 
