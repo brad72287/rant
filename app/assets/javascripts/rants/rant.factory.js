@@ -5,10 +5,8 @@
 	function RantFactory($http){
 		return {
 			getRants: getRants,
-			getRant: getRant,
 			createRant: createRant,
-			updateRant: updateRant,
-			deleteRant: deleteRant,
+			updateRant: updateRant
 		}
 
 		function getRants(){
@@ -16,10 +14,6 @@
 				.then(handleResponse)
 				.catch(handleError)
 
-		}
-
-		function getRant(){
-			
 		}
 
 		function createRant(rant){
@@ -54,12 +48,7 @@
 				.catch(handleError);
 		}
 
-		function deleteRant(){
-			
-		}
-
 		function handleResponse(response){
-			console.log();
 			return response.data
 		}
 

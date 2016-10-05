@@ -24,7 +24,7 @@
 					controller: 'RantsController as vm',
 					resolve: {
 						rantShow: function () {
-							return 'nothing';
+							return {};
 						}	
 					}
 				})
@@ -34,7 +34,7 @@
 					controller: 'RantsController as vm',
 					resolve: {
 						rantShow: function () {
-							return 'nothing';
+							return {};
 						}
 					}
 				})
