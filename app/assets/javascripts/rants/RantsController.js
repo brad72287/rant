@@ -3,11 +3,9 @@
 
 	function RantsController(RantFactory, $filter, $state){
 		var vm = this;
-		vm.name = 'notbrad';
 		vm.getRants = getRants;
 		vm.createRant = createRant;
 		vm.updateRant = updateRant;
-		vm.deleteRant = deleteRant;
 
 		//instantiation
 		activate();
@@ -30,13 +28,9 @@
 		}
 
 		function updateRant(){
-			console.log('patching a rant');
+			console.log('modding a rant');
 			return RantFactory.updateRant(vm.newRant)
 				.then(getRants)
-		}
-
-		function deleteRant(){
-			
 		}
 
 		function setRants(data){

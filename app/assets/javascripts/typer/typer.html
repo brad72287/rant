@@ -1,19 +1,23 @@
 
-<h2>go on a rant </h2>
+<h2>go on a rant</h2>
 <p class="lead">
 
 
 <form name="form" ng-submit="vm.createRant()">
-<textarea ng-model="vm.newRant.content" style="width: 80%; height: 500px; border: 0px; outline: none; resize: none; font-size: 25px; background-color: #eee;" id="input" placeholder="Start typing to begin.">
-</textarea>
-<div id="submit">
-	<input name="title" required="required" ng-model="vm.newRant.title" placeholder="Untitled Rant" type="text">
-	<span style="color: red" ng-if="form.title.$touched && form.title.$error.required">title is required!</span><br>
-	<input class="btn btn-lg btn-success" type="submit" value="submit rant!">
-</div>
-<div id="failure">
-	<a ui-sref="home.typer">try again?</a>
-</div>
+
+	<textarea ng-model="vm.newRant.content" style="width: 80%; height: 500px; border: 0px; outline: none; resize: none; font-size: 25px; background-color: #eee;" id="input" placeholder="start typing to begin.">
+	</textarea>
+
+	<div id="submit">
+		<input name="title" required="required" ng-model="vm.newRant.title" placeholder="Untitled Rant" type="text">
+		<span style="color: red" ng-if="form.title.$touched && form.title.$error.required">title is required!</span><br>
+		<input class="btn btn-lg btn-success" type="submit" value="submit rant!">
+	</div>
+
+	<div id="failure">
+		<a id="tryagain" ui-sref="home.typer">try again?</a>
+	</div>
+
 </form>
 
 </p>
@@ -40,12 +44,11 @@ $(function() {
 
 	function doneTyping () {
 		$("#input").fadeOut(1000, function(){
-			console.log("you typed words:"+wordCount());
 			if(wordCount()>=10){
 				$("h2").html("nice rant!");
 				$("#submit").fadeIn(2000);
 			} else {
-				$("h1").html("you failed :(");
+				$("h2").html("you failed :(");
 				$("#failure").fadeIn(2000);
 			}
 		});
@@ -60,12 +63,19 @@ $(function() {
 		typingTimer = setTimeout(doneTyping, doneTypingInterval);
 	});
 
-		$input.on('keydown', function () {
-		  clearTimeout(typingTimer);
-		  $("#wordcount").html(wordCount());
-		  $("#input").stop();
-		  $("#input").fadeIn(200);
-		});
+	$input.on('keydown', function () {
+		clearTimeout(typingTimer);
+		$("#input").stop(); //stop the fadeout animation
+		$("#input").fadeIn(200); //fade back in quickly
+	});
+
+	$("#tryagain").on('click', function () {
+		//alert("if at first you don't succeedd...")
+		$("#failure").hide();
+		$("h2").html("go on a rant");
+		$("#input").val('').blur();
+		$("#input").fadeIn(500);
+	});
 
 });
 </script>
