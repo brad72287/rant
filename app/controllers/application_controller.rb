@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def test
+
+  end
+
   protected
 
   def verified_request?
