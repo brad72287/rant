@@ -1,0 +1,16 @@
+<button onclick="setTimeout(myFunction, 1000)">Try it</button>
+<div id="bla">something</div>
+<script>
+var i = 0;
+var names = ["brad", "kathleen", "bla", "blablabla"];
+
+function nextWord(word) {
+    $("#bla").html(word);
+    i++;
+}
+
+$.each(names, function(index, value){
+	console.log(index+value);
+	setTimeout(alert(value), 10000)
+})
+</script>
