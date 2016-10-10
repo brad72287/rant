@@ -22,8 +22,13 @@
 		}
 
 		function minusOne(rant){
-			rant.score--;
-			RantFactory.updateRant(rant);
+			if (rant.score>0){
+				rant.score--;
+				RantFactory.updateRant(rant);
+			} else {
+				alert("No downvoting below zero.");
+			}
+			
 		}
 
 		function activate(){
