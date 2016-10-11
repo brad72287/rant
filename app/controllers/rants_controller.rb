@@ -19,6 +19,11 @@ class RantsController < ApplicationController
 		end
 	end
 
+	def analyze
+		rant = Rant.new(rant_params)
+		render json: rant
+	end
+
 	def destroy
 		rant = Rant.find_by(params[:id])
 		rant.destroy

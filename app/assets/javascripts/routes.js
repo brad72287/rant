@@ -38,6 +38,16 @@
 						}
 					}
 				})
+				.state('home.sentiment',{
+					url: 'sentiment',
+					templateUrl: 'sentiment.html',
+					controller: 'RantsController as vm',
+					resolve: {
+						rantShow: function () {
+							return {};
+						}
+					}
+				})
 				.state('home.show', {
 					url: 'rant/:id',
 					templateUrl: 'rants/show.html',

@@ -12,6 +12,7 @@
 		vm.updateRant = updateRant;
 		vm.plusOne = plusOne;
 		vm.minusOne = minusOne;
+		vm.analyzeRant = analyzeRant;
 
 		//instantiation
 		activate();
@@ -33,6 +34,10 @@
 
 		function activate(){
 			getRants();
+		}
+
+		function analyzeRant(){
+
 		}
 
 		function getRants(){
