@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'application#index'
-  post '/analyze', to "rants#analyze"
+  post '/analyze', to: "rants#analyze"
   #get "/test", to: "application#test"
   resources :rants
 end

@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	function RantsController(RantFactory, $filter, $state, rantShow){
+	function RantsController(RantFactory, $filter, $state, rantShow, $http){
 		var vm = this;
 
 		vm.data = rantShow.data;
@@ -37,7 +37,23 @@
 		}
 
 		function analyzeRant(){
-
+			console.log("analysis");
+			var req = {
+				method: 'POST',
+				url: '/analyze',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				data: {
+					rant: vm.newRant 
+				}
+			};
+			return $http(req)
+				.then(function(data){
+					vm.sentiment = data.data.sentiment;
+					vm.sentimentScore = data.data.sentiment_score;
+				})
+			//return RantFactory.createRant(vm.newRant)
 		}
 
 		function getRants(){

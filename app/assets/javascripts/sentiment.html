@@ -1,1 +1,10 @@
-hey
+<h2>live sentiment analysis</h2>
+{{vm.sentiment}}
+{{vm.sentimentScore}}
+
+<p class="lead">
+<form name="form">
+	<textarea ng-keyup="vm.analyzeRant()" ng-model="vm.newRant.content" style="width: 80%; height: 500px; border: 0px; outline: none; resize: none; font-size: 25px; background-color: #eee;" id="input" placeholder="start typing to begin.">
+	</textarea>
+</form>
+
